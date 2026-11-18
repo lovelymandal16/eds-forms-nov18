@@ -1,0 +1,271 @@
+/* Keep the AMAG theme local to AMAG-authored forms. */
+main .form-container:has(form[data-formpath*="/lovely/themes/amag-"]) {
+    --form-padding: 0;
+    --form-background-color: #fff;
+    --form-label-color: #666;
+    --form-label-font-size: 15px;
+    --form-label-font-weight: 400;
+    --form-input-font-size: 20px;
+    --form-input-border-color: rgb(0 0 0 / 30%);
+    --form-error-color: #bb0a1e;
+    --form-invalid-border-color: var(--form-error-color);
+    --form-field-gap: 0;
+    --form-field-horz-gap: 30px;
+    --form-field-vert-gap: 25px;
+    --form-paragraph-font-size: 20px;
+    --form-paragraph-margin: 0;
+
+    margin: 0;
+    padding: 36px 0 30px;
+    font-family: AudiTypeWide, Verdana, Geneva, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #333;
+}
+
+body:has(form[data-formpath*="/lovely/themes/amag-"]) > header,
+body:has(form[data-formpath*="/lovely/themes/amag-"]) > footer {
+    display: none;
+}
+
+main .form-container:has(form[data-formpath*="/lovely/themes/amag-"]) > .form-wrapper {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-wrapper {
+    min-width: 0;
+    margin: 0;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .panel-wrapper {
+    padding: 0;
+    gap: var(--form-field-vert-gap) var(--form-field-horz-gap);
+}
+
+/* Preserve the panel's accessible name without adding a visible heading. */
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-adaptive-form > legend {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-label {
+    display: block;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.4286;
+    overflow-wrap: anywhere;
+}
+
+/* Required markers are already part of this form's authored labels. */
+main .form form[data-formpath*="/lovely/themes/amag-"] [data-required="true"] > .field-label::after {
+    content: none;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] input:not([type="checkbox"], [type="radio"], [type="file"]),
+main .form form[data-formpath*="/lovely/themes/amag-"] textarea,
+main .form form[data-formpath*="/lovely/themes/amag-"] select {
+    height: 55px;
+    margin: -6px 0 0;
+    padding: 10px 0;
+    border: 0;
+    border-bottom: 1px solid var(--form-input-border-color);
+    border-radius: 0;
+    background: transparent;
+    color: #333;
+    font-family: inherit;
+    font-size: var(--form-input-font-size);
+    line-height: 1.4;
+    box-shadow: none;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] :is(input, textarea, select):hover {
+    border-color: #666;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] :is(input, textarea, select):focus {
+    border-color: #333;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] :is(input, textarea, select, button):focus-visible {
+    outline: 2px solid #333;
+    outline-offset: 4px;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] fieldset:is(.radio-group-wrapper, .checkbox-group-wrapper) {
+    padding: 0;
+    gap: 0 10px;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] :is(.radio-group-wrapper, .checkbox-group-wrapper) > legend {
+    margin-bottom: 12.5px;
+    padding: 0;
+    font-size: 15px;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] :is(.radio-wrapper, .checkbox-wrapper) {
+    align-items: flex-start;
+    gap: 16px;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .radio-wrapper {
+    min-height: 31px;
+    margin: 0;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] :is(.radio-wrapper, .checkbox-wrapper) > label {
+    flex: 0 1 auto;
+    max-width: calc(100% - 40px);
+    color: #333;
+    font-size: 20px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] input:is([type="checkbox"], [type="radio"]) {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #808080;
+    border-radius: 0;
+    background: #fff;
+    accent-color: #333;
+    cursor: pointer;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] input[type="radio"] {
+    border-radius: 50%;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] input[type="radio"]:checked {
+    background-image: radial-gradient(circle, #333 0 6px, transparent 6px);
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] input[type="checkbox"]:checked {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m5 12 4 4 10-10' fill='none' stroke='%23333' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-type-1 {
+    margin-bottom: 15px;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-preferred-contact-channel,
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-privacy-policy-acceptance,
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-required-field-note {
+    margin-top: 15px;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-privacy-policy-acceptance {
+    gap: 22px;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-privacy-policy-acceptance > label {
+    max-width: calc(100% - 46px);
+    text-decoration: underline;
+    text-decoration-color: rgb(0 0 0 / 30%);
+    text-underline-offset: 6px;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-required-field-note p {
+    color: #333;
+    font-weight: 400;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .button-wrapper {
+    margin-top: 25px;
+    padding-inline-start: 15px;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .button-wrapper button {
+    width: 240px;
+    min-height: 54px;
+    margin: 0;
+    padding: 15px 32px;
+    border: 1px solid #000;
+    border-radius: 0;
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .button-wrapper button:hover {
+    border: 1px solid #333;
+    background: #333;
+    color: #fff;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-wrapper :is(input, textarea, select, button):disabled {
+    border-color: #ccc;
+    background-color: #f2f2f2;
+    color: #999;
+    cursor: not-allowed;
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-invalid :is(input, textarea, select) {
+    border-color: var(--form-error-color);
+}
+
+main .form form[data-formpath*="/lovely/themes/amag-"] .field-description {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media (width >= 768px) {
+    main .form form[data-formpath*="/lovely/themes/amag-"] .field-wrapper:is(.field-street, .field-town-city) {
+        grid-column: span 10;
+    }
+
+    main .form form[data-formpath*="/lovely/themes/amag-"] .field-wrapper:is(.field-house-number, .field-postcode) {
+        grid-column: span 2;
+    }
+}
+
+@media (width < 768px) {
+    main .form form[data-formpath*="/lovely/themes/amag-"] {
+        --form-field-horz-gap: 0;
+    }
+
+    main .form form[data-formpath*="/lovely/themes/amag-"] .panel-wrapper > .field-wrapper {
+        grid-column: 1 / -1;
+    }
+
+    main .form form[data-formpath*="/lovely/themes/amag-"] .button-wrapper {
+        padding: 0;
+    }
+
+    main .form form[data-formpath*="/lovely/themes/amag-"] .button-wrapper button {
+        width: 100%;
+    }
+}
+
+@media (forced-colors: active) {
+    main .form form[data-formpath*="/lovely/themes/amag-"] input:is([type="checkbox"], [type="radio"]) {
+        appearance: auto;
+    }
+
+    main .form form[data-formpath*="/lovely/themes/amag-"] input:is([type="checkbox"], [type="radio"]):checked {
+        background-image: none;
+    }
+}
