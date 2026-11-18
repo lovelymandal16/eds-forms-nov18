@@ -1,0 +1,5 @@
+mountpoints:
+  /:
+    url: https://author-p133911-e1313554.adobeaemcloud.com/bin/franklin.delivery/lovelymandal16/eds-forms-nov18/main
+    type: "markup"
+    suffix: ".html"
